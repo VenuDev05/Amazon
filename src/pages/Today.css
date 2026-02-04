@@ -1,0 +1,52 @@
+#latest img{
+    height: 200px;
+    width: 200px;
+}
+#latest{
+    display: flex;
+    overflow-x: scroll;
+}
+#latest-div{
+    padding: 10px;
+    background-color: white;
+}
+#banner img{
+    width: 100%;
+}
+#product-ul{
+    text-align: center;
+    gap: 5px;
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    overflow-x: scroll;
+    background-color: wheat;
+}
+#product-ul li{
+    background-color: white;
+    display: block;
+    list-style: none;
+}
+#product-ul h3{
+    display: flex;
+    justify-content: center;
+}
+#product-ul strike{
+    font-size: small;
+    margin-top: 6px;
+    margin-left: 5px;
+    color: rgb(169, 168, 168);
+}
+#product-ul img{
+    height: 250px;
+    width: 250px;
+}
+#new-banner img{
+    width: 100%;
+}
+#carousel{
+    padding: 10px 0px;
+}
+#prev{
+    background-color: black;
+}

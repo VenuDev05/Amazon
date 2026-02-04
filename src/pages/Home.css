@@ -1,0 +1,96 @@
+.whole-container{
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+}
+#card1, #card2, #card3, #card4{
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 250px;
+    display: block;
+    background-color: white;
+}
+#card1 li, #card2 li, #card3 li, #card4 li{
+    display: block;
+    list-style: none;
+}
+ h3
+{
+    font-weight: bold;
+    font-size: large;
+    display: flex;
+    flex-wrap: wrap;
+}
+#card1 img, #card2 img,#card3 img,#card4 img{
+    height: 100px;
+    width: 100px;
+}
+#card1 ul,#card2 ul, #card3 ul, #card4 ul{
+    padding: 10px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+body{
+    background-color: rgb(211, 211, 211);
+}
+p{
+    font-size: small;
+}
+
+.furniture {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+
+.furniture img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  flex-shrink: 0; /* VERY IMPORTANT */
+  border-radius: 10px;
+}
+.product{
+    margin-left: 30px;
+    width: 95%;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: white;
+}
+#card3 strike{
+    font-size: medium;
+    margin-left: 10px;
+}
+@media screen and (max-width:600px) {
+    .product{
+        margin-left: 10px;
+    }
+}
+
+
+.items {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+
+.items img {
+    height: 200px;
+    width: 250px;
+  object-fit: cover;
+  flex-shrink: 0; /* VERY IMPORTANT */
+  border-radius: 10px;
+}
+.kitchen-product{
+    margin-left: 30px;
+    width: 95%;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: white;
+}
