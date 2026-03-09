@@ -23,7 +23,10 @@ const Navbar = () => {
         </li>
         <li>      <p>Hello,Sign in</p>
         </li>
-        <li>      <h5>Cart</h5>
+        <li id='cart'>
+          <Link to="/cart">
+            <h3>🛒</h3>
+          </Link>
         </li>
         <ul id='list-ul'>
           <li>Mx Player</li>

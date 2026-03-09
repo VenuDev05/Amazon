@@ -23,6 +23,7 @@
     background-color: wheat;
 }
 #product-ul li{
+    padding: 10px;
     background-color: white;
     display: block;
     list-style: none;
@@ -49,4 +50,18 @@
 }
 #prev{
     background-color: black;
+}
+
+.add-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: none;
+  background: #ffd814;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.add-btn:hover {
+  background: #f7ca00;
 }

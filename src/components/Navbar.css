@@ -65,3 +65,28 @@
     color: whitesmoke;
     text-decoration: none;
 }
+/* Cart list item */
+#cart {
+  list-style: none;
+  margin-left: 20px;
+}
+
+/* Cart link */
+.cart-link {
+  text-decoration: none;
+}
+
+/* Cart icon */
+#cart h3 {
+  font-size: 26px;
+  padding: 8px 12px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* Hover effect */
+#cart h3:hover {
+  transform: scale(1.1);
+}

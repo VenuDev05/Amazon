@@ -14,14 +14,6 @@ import banner1 from '../images/mobile-banner.png'
 import banner2 from '../images/banner3.jpg'
 import banner3 from '../images/new-banner.png'
 import banner4 from '../images/banner4.png'
-import mob1 from '../images/mob1.jpg'
-import mob2 from '../images/mob2.jpg'
-import mob3 from '../images/mob3.jpg'
-import mob4 from '../images/mob4.jpg'
-import mob5 from '../images/mob5.jpg'
-import mob6 from '../images/mob6.jpg'
-import mob7 from '../images/mob7.jpg'
-import mob8 from '../images/mob8.jpg'
 import s1 from '../images/s1.png'
 import s2 from '../images/s2.png'
 import s3 from '../images/s3.png'
@@ -29,11 +21,40 @@ import s4 from '../images/s4.png'
 import s5 from '../images/s5.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import mobData from './Mobdata'
+import { addToCart, deleteFromCart } from './store/cartslice/Cartslice'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 
 const Today = () => {
+    const cartProducts = useSelector((state) => state.cart.cartItems)
+    const dispatch = useDispatch()
+
+    function showToast(message, type = "success") {
+        const toast = document.getElementById("toast");
+
+        toast.innerText = message;
+        toast.className = `toast show ${type}`;
+
+        setTimeout(() => {
+            toast.className = "toast";
+        }, 3000);
+    }
+
+    const addCart = (item) => {
+        dispatch(addToCart(item));
+        showToast("Product added to cart✅", "success");
+    };
+
+    const deleteCart = (item) => {
+        dispatch(deleteFromCart(item));
+        showToast("Product removed from cart❌", "error");
+    };
+
     return (
         <div>
+            <div id="toast" className="toast">Product added to cart</div>
             <div id="latest-div">
                 <h3>Latest Launch</h3>
                 <div id="latest">
@@ -55,46 +76,31 @@ const Today = () => {
             </div>
             <div id="product">
                 <ul id='product-ul'>
-                    <li>
-                        <img src={mob1} />
-                        <p>Nothing phone (3a Lite)</p>
-                        <h3>$19,999 <strike>M.R.P : 22,999</strike> </h3>
-                    </li>
-                    <li>
-                        <img src={mob2} />
-                        <p>Motorola G67 Power 5G</p>
-                        <h3>$14,030 <strike>M.R.P : 17,999</strike> </h3>
-                    </li>
-                    <li>
-                        <img src={mob3} />
-                        <p>Samsung Galaxy S25 plus 5G</p>
-                        <h3>$72,899 <strike>M.R.P : 99,999</strike> </h3>
-                    </li>
-                    <li>
-                        <img src={mob4} />
-                        <p>CMF BY NOTHING phone 2 Pro 5G</p>
-                        <h3>$18,249 <strike>M.R.P : 22,999</strike> </h3>
-                    </li>
-                    <li>
-                        <img src={mob5} />
-                        <p>Nothing phone (3a)</p>
-                        <h3>$25,999 <strike>M.R.P : 27,999</strike> </h3>
-                    </li>
-                    <li>
-                        <img src={mob6} />
-                        <p>Nothing phone (3a) Lite</p>
-                        <h3>$20,999 <strike>M.R.P : 22,999</strike> </h3>
-                    </li>
-                    <li>
-                        <img src={mob7} />
-                        <p>Nothing phone (3a) Pro 5G</p>
-                        <h3>$34,200 <strike>M.R.P : 36,999</strike> </h3>
-                    </li>
-                    <li>
-                        <img src={mob8} />
-                        <p>Google Pixel 9A</p>
-                        <h3>$39,199 <strike>M.R.P : 49,999</strike> </h3>
-                    </li>
+                    {mobData.map((item) => {
+                        return (
+                            <li key={item.id}>
+                                <img src={item.img} />
+                                <p>{item.name}</p>
+                                <h3>{item.price} <strike>{item.strike}</strike> </h3>
+
+                                {cartProducts.find(product => product.id === item.id) ? (
+                                    <button
+                                        className="remove-btn"
+                                        onClick={() => deleteCart(item)}
+                                    >
+                                        Remove from cart
+                                    </button>
+                                ) : (
+                                    <button
+                                        className="add-btn"
+                                        onClick={() => addCart(item)}
+                                    >
+                                        Add to cart
+                                    </button>)}
+
+                            </li>
+                        )
+                    })}
                 </ul>
             </div>
             <div id="new-banner">

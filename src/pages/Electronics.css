@@ -16,10 +16,15 @@ body{
     height: 200px;
     width: 200px;
 }
+
 #product li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     background-color: white;
     list-style: none;
+    padding: 10px;
 }
 #product strike{
     font-size: medium;
@@ -65,9 +70,14 @@ body{
     width: 200px;
 }
 #acc-product li{
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     text-align: center;
     background-color: white;
     list-style: none;
+    padding: 10px;
 }
 #acc-product strike{
     font-size: medium;
@@ -77,4 +87,37 @@ body{
 #acc-product li h3{
     color: black;
     margin-left: 10px;
+}
+
+
+/* Toast container */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #323232;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-size: 16px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.4s ease;
+  z-index: 999;
+}
+
+/* Visible state */
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Success style */
+.toast.success {
+  background: #28a745;
+}
+
+/* Error style */
+.toast.error {
+  background: #dc3545;
 }
