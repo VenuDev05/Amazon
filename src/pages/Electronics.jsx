@@ -123,7 +123,7 @@ const Electronics = () => {
                             <li key={item.id}>
                                 <img src={item.img} />
                                 <p>{item.name}</p>
-                                <h3>{item.price} <strike>{item.strike}</strike> </h3>
+                                <h3>${item.price} <strike>{item.strike}</strike> </h3>
                                 {cartProducts.find(product => product.id === item.id) ? (
                                     <button
                                         className="remove-btn"
@@ -151,7 +151,7 @@ const Electronics = () => {
                             <li key={item.id}>
                                 <img src={item.img} />
                                 <p>{item.name}</p>
-                                <h3>{item.price} <strike>{item.strike}</strike> </h3>
+                                <h3>${item.price} <strike>{item.strike}</strike> </h3>
                                 {cartProducts.find(product => product.id === item.id) ? (
                                     <button
                                         className="remove-btn"
@@ -179,7 +179,7 @@ const Electronics = () => {
                             <li key={item.id}>
                                 <img src={item.img} />
                                 <p>{item.name}</p>
-                                <h3>{item.price} <strike>{item.strike}</strike> </h3>
+                                <h3>${item.price} <strike>{item.strike}</strike> </h3>
                                 {cartProducts.find(product => product.id === item.id) ? (
                                     <button
                                         className="remove-btn"

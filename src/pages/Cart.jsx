@@ -1,7 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteFromCart, updateQuantity, updatePrice } from "./store/cartslice/Cartslice";
+import { deleteFromCart, updateQuantity } from "./store/cartslice/Cartslice";
 import './Cart.css'
+import { Link } from "react-router-dom";
 
 const Cart = () => {
 
@@ -25,7 +26,7 @@ const Cart = () => {
   if (cartProducts.length === 0) {
     return <h2 id="empty">Your cart is empty</h2>;
   }
-  
+
 
   return (
     <div className="cart-container">
@@ -51,12 +52,10 @@ const Cart = () => {
               <button onClick={() => incrementCart(item.id, item.quantity)}>+</button>
             </div>
 
-            <button
-              className="remove-btn"
-              onClick={() => deleteCart(item)}
-            >
-              Remove
-            </button>
+            <button className="remove-btn" onClick={() => deleteCart(item)}>Remove</button>
+           <Link to='/check'>
+           <button className="order-btn">CheckOut</button>
+           </Link> 
 
           </li>
         ))}

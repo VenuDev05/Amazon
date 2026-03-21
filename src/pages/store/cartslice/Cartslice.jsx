@@ -7,7 +7,8 @@ const initialState = {
 }
 
 const CartSlice = createSlice({
-  name: "cart",
+  /*structure*/
+  name: "cart",  //redux slice name
   initialState,
 
   reducers: {
@@ -41,7 +42,7 @@ const CartSlice = createSlice({
     deleteFromCart: (state, action) => {
 
       state.cartItems = state.cartItems.filter(
-        item => item.id !== action.payload.id
+        item => item.id !== action.payload.id  //keeps the item that pushed
       )
 
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
@@ -65,6 +66,7 @@ const CartSlice = createSlice({
   }
 })
 
-export const { addToCart, deleteFromCart, updateQuantity, updatePrice } = CartSlice.actions
+
+export const { addToCart, deleteFromCart, updateQuantity } = CartSlice.actions
 
 export default CartSlice.reducer

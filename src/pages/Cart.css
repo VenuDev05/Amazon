@@ -101,6 +101,20 @@
     background: #d9363e;
 }
 
+.order-btn {
+    padding: 8px 14px;
+    border: none;
+    background: rgb(50, 209, 50);
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.order-btn:hover {
+    background: #239716;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .cart-item {
@@ -113,7 +127,133 @@
         margin-left: 0;
     }
 
-    .remove-btn {
+    .remove-btn, .order-btn {
         margin-left: 0;
     }
+}
+/* Main Container */
+.main-checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background-color: #f3f3f3;
+  min-height: 100vh;
+}
+
+/* Title */
+.main-checkout h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* Card Container */
+.checkout-container {
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Inputs */
+.checkout-container input,
+.checkout-container textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.checkout-container input:focus,
+.checkout-container textarea:focus {
+  border-color: #ff9900;
+  box-shadow: 0 0 5px rgba(255,153,0,0.4);
+}
+
+/* Textarea */
+.checkout-container textarea {
+  resize: none;
+  height: 80px;
+}
+
+.payment-options {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.payment-options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Align radio properly */
+.payment-options input[type="radio"] {
+    width: 20px;
+  margin: 0;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Hover effect */
+.payment-options label:hover {
+  background-color: #f9f9f9;
+  border-color: #ff9900;
+}
+
+/* Selected state */
+.payment-options input[type="radio"]:checked + span {
+  font-weight: 600;
+  color: #ff9900;
+}
+
+/* Card Details */
+.card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Button */
+.checkout-container button {
+  margin-top: 10px;
+  padding: 12px;
+  background-color: #ff9900;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.checkout-container button:hover {
+  background-color: #e68a00;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .checkout-container {
+    padding: 20px;
+  }
+
+  .main-checkout h2 {
+    font-size: 22px;
+  }
 }

@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Today from './pages/Today';
 import Electronics from './pages/Electronics';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Route path='/today' element = {<Today/>}/>
       <Route path='/electronics' element = {<Electronics/>} />
       <Route path='/cart' element={<Cart/>} />
+      <Route path='/check' element={<Checkout/>} />
     </Routes>
     <Footer />
     </BrowserRouter>
