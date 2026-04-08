@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Electronics.css'
 import off1 from '../images/off1.png'
 import off2 from '../images/off2.png'
@@ -37,6 +37,13 @@ const Electronics = () => {
         dispatch(deleteFromCart(item));
         showToast("Product removed from cart❌", "error");
     };
+
+    const [electronics, setElectronics] = useState([])
+    useEffect(()=>{
+        fetch('http://localhost:5001/receive')
+        .then((res)=>res.json())
+        .then((data)=>setElectronics(data))
+    },[])
 
     return (
         <div>
@@ -118,13 +125,13 @@ const Electronics = () => {
                 <div id="toast" className="toast">Product added to cart</div>
                 <h3>Up to 80% off | Shop now</h3>
                 <ul id="product">
-                    {eleData.map((item) => {
+                    {electronics.map((item) => {
                         return (
-                            <li key={item.id}>
-                                <img src={item.img} />
-                                <p>{item.name}</p>
-                                <h3>${item.price} <strike>{item.strike}</strike> </h3>
-                                {cartProducts.find(product => product.id === item.id) ? (
+                            <li key={item._id}>
+                                <img src={item.img} alt={item.title}/>
+                                <p>{item.title}</p>
+                                <h3>${item.price} </h3>
+                                {cartProducts.find(product => product._id === item._id) ? (
                                     <button
                                         className="remove-btn"
                                         onClick={() => deleteCart(item)}

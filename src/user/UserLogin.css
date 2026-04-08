@@ -1,0 +1,72 @@
+/* Wrapper */
+#login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+/* Form */
+#login-container form {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+#login-container h2 {
+    color: black;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Input groups */
+#login-container .user,
+#login-container .pass {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+/* Labels */
+#login-container label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Inputs */
+#login-container input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+/* Focus */
+#login-container input:focus {
+  border-color: #4facfe;
+  box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+}
+
+/* Button */
+#login-container button {
+  width: 100%;
+  padding: 10px;
+  background: #4facfe;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+/* Hover */
+#login-container button:hover {
+  background: #00c6ff;
+}

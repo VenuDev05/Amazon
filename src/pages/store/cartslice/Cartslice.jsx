@@ -18,7 +18,7 @@ const CartSlice = createSlice({
       const newItem = action.payload
 
       const existingItem = state.cartItems.find(
-        item => item.id === newItem.id
+        item => item._id === newItem._id
       )
 
       if (existingItem) {
@@ -26,7 +26,7 @@ const CartSlice = createSlice({
       }
       else {
         state.cartItems.push({
-          id: newItem.id,
+          _id: newItem._id,
           name: newItem.name,
           img: newItem.img,
           des: newItem.des,
@@ -42,7 +42,7 @@ const CartSlice = createSlice({
     deleteFromCart: (state, action) => {
 
       state.cartItems = state.cartItems.filter(
-        item => item.id !== action.payload.id  //keeps the item that pushed
+        item => item._id !== action.payload._id  //keeps the item that pushed
       )
 
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
@@ -51,10 +51,10 @@ const CartSlice = createSlice({
 
     updateQuantity: (state, action) => {
 
-      const { id, quantity } = action.payload
+      const { _id, quantity } = action.payload
 
       const itemToUpdate = state.cartItems.find(
-        item => item.id === id
+        item => item._id === _id
       )
 
       if (itemToUpdate) {
