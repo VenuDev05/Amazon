@@ -2,7 +2,7 @@ import React from 'react'
 import './Item.css'
 import { Link } from 'react-router-dom'
 
-const Upload = () => {
+const MobileUpload = () => {
 
 
     const handleSubmit = (event) => {
@@ -20,7 +20,7 @@ const Upload = () => {
             const obj = { title, price, img, quantity }
             console.log(obj)
 
-            fetch('http://localhost:5001/send', {
+            fetch('http://localhost:5001/mobDataSend', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ const Upload = () => {
             }).then((res) => res.json()).then((data) => {
                 alert('Data added successfully')
                 form.reset()
-                window.location.href = '/upload'
+                window.location.href = '/mobUpload'
             })
 
         }
@@ -48,7 +48,7 @@ const Upload = () => {
             </div>
             <form onSubmit={handleSubmit}>
 
-                <h2>Electronics</h2>
+                <h2>Mobile</h2>
 
                 <div className="upload-title">
                     <label value="title">Title</label>
@@ -69,10 +69,10 @@ const Upload = () => {
 
             </form>
             <li>
-                <Link to='/update' id='updateBtn' >Update➡️</Link>
+                <Link to='/mobUpdate' id='updateBtn' >Update➡️</Link>
             </li>
         </div>
     )
 }
 
-export default Upload
+export default MobileUpload

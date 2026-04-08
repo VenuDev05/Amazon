@@ -11,7 +11,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, deleteFromCart } from './store/cartslice/Cartslice'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { eleData, accData, watData } from './Eledata'
 
 
 const Electronics = () => {
@@ -150,62 +149,7 @@ const Electronics = () => {
                     })}
                 </ul>
             </div>
-            <div id="accessories">
-                <h3>Up to 80% off | Shop now</h3>
-                <ul id="acc-product">
-                    {accData.map((item) => {
-                        return (
-                            <li key={item.id}>
-                                <img src={item.img} />
-                                <p>{item.name}</p>
-                                <h3>${item.price} <strike>{item.strike}</strike> </h3>
-                                {cartProducts.find(product => product.id === item.id) ? (
-                                    <button
-                                        className="remove-btn"
-                                        onClick={() => deleteCart(item)}
-                                    >
-                                        Remove from cart
-                                    </button>
-                                ) : (
-                                    <button
-                                        className="add-btn"
-                                        onClick={() => addCart(item)}
-                                    >
-                                        Add to cart
-                                    </button>)}
-                            </li>
-                        )
-                    })}
-                </ul>
-            </div>
-            <div id="air">
-                <h3>Up to 80% off | Shop now</h3>
-                <ul id="product">
-                    {watData.map((item) => {
-                        return (
-                            <li key={item.id}>
-                                <img src={item.img} />
-                                <p>{item.name}</p>
-                                <h3>${item.price} <strike>{item.strike}</strike> </h3>
-                                {cartProducts.find(product => product.id === item.id) ? (
-                                    <button
-                                        className="remove-btn"
-                                        onClick={() => deleteCart(item)}
-                                    >
-                                        Remove from cart
-                                    </button>
-                                ) : (
-                                    <button
-                                        className="add-btn"
-                                        onClick={() => addCart(item)}
-                                    >
-                                        Add to cart
-                                    </button>)}
-                            </li>
-                        )
-                    })}
-                </ul>
-            </div>
+           
         </div>
     );
 };

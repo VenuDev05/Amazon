@@ -21,10 +21,11 @@ import s4 from '../images/s4.png'
 import s5 from '../images/s5.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import mobData from './Mobdata'
 import { addToCart, deleteFromCart } from './store/cartslice/Cartslice'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { useEffect } from 'react'
 
 
 const Today = () => {
@@ -52,6 +53,14 @@ const Today = () => {
         showToast("Product removed from cart❌", "error");
     };
 
+    const [mobData, setMobData] = useState([])
+
+    useEffect(()=>{
+        fetch('http://localhost:5001/mobDataReceive')
+        .then((res)=>res.json())
+        .then((data)=>setMobData(data))
+    })
+
     return (
         <div>
             <div id="toast" className="toast">Product added to cart</div>
@@ -78,12 +87,12 @@ const Today = () => {
                 <ul id='product-ul'>
                     {mobData.map((item) => {
                         return (
-                            <li key={item.id}>
+                            <li key={item._id}>
                                 <img src={item.img} />
-                                <p>{item.name}</p>
+                                <p>{item.title}</p>
                                 <h3>${item.price} <strike>{item.strike}</strike> </h3>
 
-                                {cartProducts.find(product => product.id === item.id) ? (
+                                {cartProducts.find(product => product._id === item._id) ? (
                                     <button
                                         className="remove-btn"
                                         onClick={() => deleteCart(item)}

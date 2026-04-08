@@ -113,7 +113,6 @@
   min-width: 120px;
 }
 
-/* ✅ Important: keep hover active for both */
 .dropdown:hover .dropdown-menu,
 .dropdown-menu:hover {
   display: block;
@@ -132,4 +131,8 @@ li{
 }
 #cart-btn{
     text-decoration: none;
+}
+#loginBtn{
+    text-decoration: none;
+    color: whitesmoke;
 }

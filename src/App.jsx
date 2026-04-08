@@ -13,6 +13,9 @@ import Upload from './admin/Upload';
 import Update from './admin/Update';
 import Edit from './admin/Edit';
 import UserLogin from './user/UserLogin';
+import MobileUpload from './admin/MobileUpload';
+import MobileUpdate from './admin/MobileUpdate';
+import MobileEdit from './admin/MobileEdit';
 
 
 function App() {
@@ -32,6 +35,11 @@ function App() {
       <Route path='/update' element={<Update/>} />
       <Route path='/edit/:id' element={<Edit/>} loader={({params})=>
       fetch(`http://localhost:5001/list/${params.id}`)
+      } />
+      <Route path='/mobUpload' element={<MobileUpload/>} />
+      <Route path='/mobUpdate' element={<MobileUpdate/>} />
+      <Route path='/mobEdit/:id' element={<MobileEdit/>} loader={({params})=>
+      fetch(`http://localhost:5001/mobDataList/${params.id}`)
       } />
     </Routes>
     <Footer />

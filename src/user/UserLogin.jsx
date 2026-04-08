@@ -1,5 +1,3 @@
-import React from 'react'
-import Upload from '../admin/Upload'
 import { useNavigate } from 'react-router-dom'
 import './UserLogin.css'
 
@@ -16,13 +14,13 @@ const UserLogin = () => {
         let pass = document.getElementById('password').value
 
         if (user == 'admin' && pass == 'venu@2005') {
-            localStorage.setItem("username",{ state: { user } })
+            sessionStorage.setItem("username",{ state: { user } })
             navigate('/Upload',{ state: { user } })
             alert("Welcome to the admin page")
 
         }
         else {
-            localStorage.setItem("username", user)
+            sessionStorage.setItem("username", user)
             alert("welcome to the Online shopping paltform")
             navigate('/',{ state: { user } })
         }

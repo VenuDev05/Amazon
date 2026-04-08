@@ -8,7 +8,7 @@ const Navbar = () => {
   const location = useLocation()
 
   const [username, setUsername] = useState(
-    localStorage.getItem('username') || 'Sign in'
+    sessionStorage.getItem('username') || 'Sign in'
   )
 
   useEffect(() => {
