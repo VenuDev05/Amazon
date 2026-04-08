@@ -4,12 +4,15 @@ import { Link } from 'react-router-dom'
 
 const Update = () => {
 
+    const API_URL = "https://amazon-data-bzmn.onrender.com"
+
+
     const [productItems, setProductItems] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5001/receive').then((res) => res.json()).then((data) => setProductItems(data), [])
+        fetch(`${API_URL}/receive`).then((res) => res.json()).then((data) => setProductItems(data), [])
     })
     const deleteItems = (id) => {
-        fetch(`http://localhost:5001/delete/${id}`, {
+        fetch(`${API_URL}/delete/${id}`, {
             method: "DELETE"
         }).then((res) => res.json()).then((data) => {
             alert("Data deleted successfully")

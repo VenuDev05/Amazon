@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'
 
 const MobileUpload = () => {
 
+        const API_URL = "https://amazon-data-bzmn.onrender.com"
+
+
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -20,7 +23,7 @@ const MobileUpload = () => {
             const obj = { title, price, img, quantity }
             console.log(obj)
 
-            fetch('http://localhost:5001/mobDataSend', {
+            fetch(`${API_URL}/mobDataSend`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

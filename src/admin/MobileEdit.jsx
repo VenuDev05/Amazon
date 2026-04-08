@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'
 
 const MobileEdit = () => {
 
+  const API_URL = "https://amazon-data-bzmn.onrender.com"
+
+
   const { id } = useParams()
   const [productData, setProductData] = useState({
     title: "",
@@ -12,7 +15,7 @@ const MobileEdit = () => {
   })
 
   useEffect(() => {
-    fetch(`http://localhost:5001/mobDataList/${id}`)
+    fetch(`${API_URL}/mobDataList/${id}`)
       .then((res) => res.json())
       .then(((data) => setProductData(data)))
   })
@@ -27,7 +30,7 @@ const MobileEdit = () => {
     const productObj = { title, price, img }
     console.log(productObj)
 
-    fetch(`http://localhost:5001/mobDataUpdate/${id}`, {
+    fetch(`${API_URL}/mobDataUpdate/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

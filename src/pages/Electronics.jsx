@@ -38,8 +38,10 @@ const Electronics = () => {
     };
 
     const [electronics, setElectronics] = useState([])
+        const API_URL = "https://amazon-data-bzmn.onrender.com"
+
     useEffect(()=>{
-        fetch('http://localhost:5001/receive')
+        fetch(`${API_URL}/receive`)
         .then((res)=>res.json())
         .then((data)=>setElectronics(data))
     },[])

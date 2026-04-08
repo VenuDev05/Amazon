@@ -54,11 +54,13 @@ const Today = () => {
     };
 
     const [mobData, setMobData] = useState([])
+    const API_URL = "https://amazon-data-bzmn.onrender.com"
 
-    useEffect(()=>{
-        fetch('http://localhost:5001/mobDataReceive')
-        .then((res)=>res.json())
-        .then((data)=>setMobData(data))
+
+    useEffect(() => {
+        fetch(`${API_URL}/mobDataReceive`)
+            .then((res) => res.json())
+            .then((data) => setMobData(data))
     })
 
     return (

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 
 const Upload = () => {
 
+    const API_URL = "https://amazon-data-bzmn.onrender.com"
+
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -20,7 +22,7 @@ const Upload = () => {
             const obj = { title, price, img, quantity }
             console.log(obj)
 
-            fetch('http://localhost:5001/send', {
+            fetch(`${API_URL}/send`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
