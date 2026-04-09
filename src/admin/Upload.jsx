@@ -31,7 +31,7 @@ const Upload = () => {
             }).then((res) => res.json()).then((data) => {
                 alert('Data added successfully')
                 form.reset()
-                window.location.href = '/upload'
+                window.location.href = '/update'
             })
 
         }

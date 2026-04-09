@@ -32,7 +32,7 @@ const MobileUpload = () => {
             }).then((res) => res.json()).then((data) => {
                 alert('Data added successfully')
                 form.reset()
-                window.location.href = '/mobUpload'
+                window.location.href = '/mobUpdate'
             })
 
         }
