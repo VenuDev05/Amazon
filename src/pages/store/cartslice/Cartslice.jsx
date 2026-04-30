@@ -42,7 +42,7 @@ const CartSlice = createSlice({
     deleteFromCart: (state, action) => {
 
       state.cartItems = state.cartItems.filter(
-        item => item._id !== action.payload._id  //keeps the item that pushed
+        item => item._id !== action.payload._id  //keeps the item that pushed (same items can't push to avoid duplicates)
       )
 
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems))

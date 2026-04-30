@@ -1,0 +1,57 @@
+.banner {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+
+.banner::-webkit-scrollbar {
+  height: 6px;
+}
+
+.banner::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.banner img {
+  height: 250px;       
+  width: auto;       
+  border-radius: 12px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.banner img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.continer {
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.category-ul {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  list-style: none;
+}
+
+.category-ul li {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #111, #333);
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-ul li:hover {
+  background: linear-gradient(135deg, #ff9900, #ffb84d);
+  color: #000;
+  transform: scale(1.1);
+}

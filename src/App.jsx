@@ -16,6 +16,7 @@ import UserLogin from './user/UserLogin';
 import MobileUpload from './admin/MobileUpload';
 import MobileUpdate from './admin/MobileUpdate';
 import MobileEdit from './admin/MobileEdit';
+import Fashion from './pages/Fashion';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       <Route path='/user' element={<UserLogin/>} />
       <Route path='/today' element = {<Today/>}/>
       <Route path='/electronics' element = {<Electronics/>} />
+      <Route path='/fashion' element={<Fashion/>} />
       <Route path='/cart' element={<Cart/>} />
       <Route path='/check' element={<Checkout/>} />
       <Route path='/upload' element={<Upload/>} />

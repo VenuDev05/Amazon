@@ -52,13 +52,11 @@ const Navbar = () => {
         </ul>
 
         <ul id='list-ul'>
-          <li>Mx Player</li>
-          <li>Sell</li>
-          <li>Today's Deal</li>
+          
           <li><Link to='/today' id='cat'>Mobiles</Link></li>
           <li><Link to='/electronics' id='cat'>Electronics</Link></li>
-          <li>Fashion</li>
-          <li>Furniture</li>
+          <li><Link to='/fashion' id='cat'>Fashion</Link></li>
+          
         </ul>
 
       </nav>
