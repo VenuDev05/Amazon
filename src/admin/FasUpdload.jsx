@@ -2,9 +2,10 @@ import React from 'react'
 import './Item.css'
 import { Link } from 'react-router-dom'
 
-const Upload = () => {
+const FasUpload = () => {
 
-    const API_URL = "https://amazon-data-bzmn.onrender.com"
+        const API_URL = "https://amazon-data-bzmn.onrender.com"
+
 
 
     const handleSubmit = (event) => {
@@ -22,7 +23,7 @@ const Upload = () => {
             const obj = { title, price, img, quantity }
             console.log(obj)
 
-            fetch(`${API_URL}/send`, {
+            fetch(`${API_URL}/fasDataSend`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -31,7 +32,7 @@ const Upload = () => {
             }).then((res) => res.json()).then((data) => {
                 alert('Data added successfully')
                 form.reset()
-                window.location.href = '/update'
+                window.location.href = '/fasUpdate'
             })
 
         }
@@ -53,7 +54,7 @@ const Upload = () => {
             </div>
             <form onSubmit={handleSubmit}>
 
-                <h2>Electronics</h2>
+                <h2>Fashion</h2>
 
                 <div className="upload-title">
                     <label value="title">Title</label>
@@ -74,10 +75,10 @@ const Upload = () => {
 
             </form>
             <li>
-                <Link to='/update' id='updateBtn' >Update➡️</Link>
+                <Link to='/fasUpdate' id='updateBtn' >Update➡️</Link>
             </li>
         </div>
     )
 }
 
-export default Upload
+export default FasUpload

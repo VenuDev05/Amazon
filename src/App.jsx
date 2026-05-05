@@ -17,6 +17,9 @@ import MobileUpload from './admin/MobileUpload';
 import MobileUpdate from './admin/MobileUpdate';
 import MobileEdit from './admin/MobileEdit';
 import Fashion from './pages/Fashion';
+import FasUpload from './admin/FasUpdload';
+import FasUpdate from './admin/FasUpdate';
+import FasEdit from './admin/FasEdit';
 
 
 function App() {
@@ -42,6 +45,11 @@ function App() {
       <Route path='/mobUpdate' element={<MobileUpdate/>} />
       <Route path='/mobEdit/:id' element={<MobileEdit/>} loader={({params})=>
       fetch(`http://localhost:5001/mobDataList/${params.id}`)
+      } />
+      <Route path='/fasUpload' element={<FasUpload/>} />
+      <Route path='/fasUpdate' element={<FasUpdate/>} />
+      <Route path='/fasEdit' element={<FasEdit/>} loader={({params})=>
+      fetch(`http://localhost:5001/fasDataList/${params.id}`)
       } />
     </Routes>
     <Footer />

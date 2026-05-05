@@ -47,6 +47,9 @@ const MobileUpload = () => {
                     <li>
                         <Link to='/mobUpload' >Mobile</Link>
                     </li>
+                    <li>
+                        <Link to='/fasData'>Fashion</Link>
+                    </li>
                 </ul>
             </div>
             <form onSubmit={handleSubmit}>

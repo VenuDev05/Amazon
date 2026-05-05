@@ -10,10 +10,6 @@ import lat7 from '../images/lat7.jpg'
 import lat8 from '../images/lat8.jpg'
 import lat9 from '../images/lat9.jpg'
 import lat10 from '../images/lat10.png'
-import banner1 from '../images/mobile-banner.png'
-import banner2 from '../images/banner3.jpg'
-import banner3 from '../images/new-banner.png'
-import banner4 from '../images/banner4.png'
 import s1 from '../images/s1.png'
 import s2 from '../images/s2.png'
 import s3 from '../images/s3.png'
@@ -81,10 +77,7 @@ const Today = () => {
                     <img src={lat10} alt="" />
                 </div>
             </div>
-            <div id="banner">
-                <img src={banner4} id='banner1' />
-                <img src={banner2} id='banner2' />
-            </div>
+          
             <div id="product">
                 <ul id='product-ul'>
                     {mobData.map((item) => {
@@ -114,9 +107,7 @@ const Today = () => {
                     })}
                 </ul>
             </div>
-            <div id="new-banner">
-                <img src={banner3} />
-            </div>
+           
             <div id="carousel">
                 <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
 
