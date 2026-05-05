@@ -58,7 +58,7 @@ const Fashion = () => {
                 <li>Kids</li>
             </ul>
         </div>
-        <div className="product">
+        <div className="fasProduct">
             {fashion.map((item) => {
                         return (
                             <li key={item._id}>
