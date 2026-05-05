@@ -32,7 +32,7 @@ const FasUpload = () => {
             }).then((res) => res.json()).then((data) => {
                 alert('Data added successfully')
                 form.reset()
-                window.location.href = '/fasUpdate'
+                window.location.href = '/fasUpload'
             })
 
         }
