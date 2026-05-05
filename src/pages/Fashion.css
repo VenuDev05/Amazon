@@ -63,6 +63,11 @@
 }
 
 .fasProduct li {
+  display: flex;
+  flex-wrap:wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
     list-style: none;
     background: #fff;
     border-radius: 12px;
